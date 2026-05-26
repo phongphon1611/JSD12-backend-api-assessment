@@ -1,0 +1,71 @@
+### ดูสินค้าทั้งหมด
+GET http://localhost:3000/api/products
+
+### สร้างสินค้า
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "Katom",
+  "price": 55.55,
+  "quantity": 5
+}
+
+### สร้างสินค้าชิ้นที่2
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "SweetWater",
+  "price": 80,
+  "quantity": 99
+}
+
+### สร้างสินค้าชิ้นที่3
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "CocaCola",
+  "price": 45,
+  "quantity": 55
+}
+### ค้นหาสินค้าตามเลขID
+GET http://localhost:3000/api/products/1779783599301
+
+### อัพเดทสินค้าตามเลขID
+PATCH http://localhost:3000/api/products/1779783596058
+Content-Type: application/json
+
+{
+  "name": "Katom BIG",
+  "price": 80,
+  "quantity": 10
+}
+
+### ลบสินค้าโดยเลขID
+DELETE http://localhost:3000/api/products/1779783599301
+
+### ค้นหาสินค้าตาม*ชื่อสินค้า***
+GET http://localhost:3000/api/products?name=katom
+
+### ขอดูรายการสิ้นค้าโดยเรียงจากน้อยไปมาก(ราคา)
+GET http://localhost:3000/api/products?sort=price
+
+
+
+
+
+
+
+
+### ดูสินค้าที่ไม่มีจริงโดยใช้ID มั่วๆ
+GET http://localhost:3000/api/products/wrong-id
+
+### สร้างสินค้าใหม่แต่ส่งข้อมูลไม่ครบ
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "No Price Product"
+}
